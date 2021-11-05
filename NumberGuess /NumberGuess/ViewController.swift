@@ -43,6 +43,12 @@ class ViewController: UIViewController {
         label.text = "Guess now!"
         print("Zu erratende Zahl \(model.numberToGuess)")
     }
+    
+    override func
+    shouldPerformSegue(withIdentifier identifier: String, sender: Any?) -> Bool {
+        print("Nein")
+        return false
+    }
 
 
 }

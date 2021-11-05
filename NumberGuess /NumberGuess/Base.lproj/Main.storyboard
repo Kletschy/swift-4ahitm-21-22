@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="b7P-d7-hW1">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
@@ -9,6 +9,38 @@
     </dependencies>
     <scenes>
         <!--View Controller-->
+        <scene sceneID="NO5-5H-qk9">
+            <objects>
+                <viewController id="5G8-zD-bya" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="yAC-c9-ccU">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="80k-Jx-RhD"/>
+                        <color key="backgroundColor" systemColor="systemTealColor"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="LB7-mK-uW3"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="zlQ-gb-aw9" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1141" y="116"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="KHI-Pk-goQ">
+            <objects>
+                <navigationController id="b7P-d7-hW1" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="m29-yT-uuw">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="PIn-GN-p8p"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="C0a-an-yyh" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-871" y="116"/>
+        </scene>
+        <!--guess me-->
         <scene sceneID="tne-QT-ifu">
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="NumberGuess" customModuleProvider="target" sceneMemberID="viewController">
@@ -42,9 +74,17 @@
                                     <action selector="guessButtonClick:" destination="BYZ-38-t0r" eventType="touchUpInside" id="eSN-fm-TFD"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FOc-I4-WZN">
+                                <rect key="frame" x="192" y="197" width="30" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="log"/>
+                                <connections>
+                                    <segue destination="5G8-zD-bya" kind="show" identifier="Detail" id="wjI-Cr-1jc"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <color key="backgroundColor" systemColor="systemIndigoColor"/>
                         <constraints>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="5vE-OX-tus" secondAttribute="trailing" constant="20" id="I0o-a8-NxT"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="alU-gs-X9g" secondAttribute="bottom" constant="303" id="VSo-8m-iuT"/>
@@ -55,6 +95,7 @@
                             <constraint firstItem="5vE-OX-tus" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="ySB-XD-IUy"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" title="guess me" id="gTV-T5-1QR"/>
                     <connections>
                         <outlet property="guessButton" destination="alU-gs-X9g" id="G99-W0-Jrd"/>
                         <outlet property="guessMeButton" destination="alU-gs-X9g" id="1RJ-vu-3Ew"/>
@@ -68,8 +109,11 @@
         </scene>
     </scenes>
     <resources>
-        <systemColor name="systemBackgroundColor">
-            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        <systemColor name="systemIndigoColor">
+            <color red="0.34509803921568627" green="0.33725490196078434" blue="0.83921568627450982" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemTealColor">
+            <color red="0.35294117647058826" green="0.78431372549019607" blue="0.98039215686274506" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>
