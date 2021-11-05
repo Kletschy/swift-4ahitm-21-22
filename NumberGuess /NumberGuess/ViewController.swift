@@ -10,9 +10,18 @@ class ViewController: UIViewController {
     @IBOutlet weak var guessButton: UIButton!
     
     
+    @IBOutlet weak var guessMeButton: UIButton!
+    
+    @IBAction func editingTextfield(_ sender: UITextField) {
+        guessMeButton.isEnabled = true
+                print("text is now\(sender.text)")
+    }
+
+    
     @IBAction func guessButtonClick(_ sender: UIButton) {
         let guessedNumber = model.compare(guessedString: textField.text!)
-        //TODO: Check input for nill
+        
+        
         
         let text:String?
         
